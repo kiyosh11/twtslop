@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "name": "twtslop",
+  "description": "A community-maintained X account filter list. Initial entries selected by the repository owner.",
+  "accounts": [
+    { "handle": "vineerpasam", "category": "other" },
+    { "handle": "ash_twtz", "category": "other" },
+    { "handle": "Sherifdeenolat2", "category": "other" },
+    { "handle": "AlfinCodes", "category": "other" },
+    { "handle": "itsvishaltwt", "category": "other" },
+    { "handle": "neerajjj6785", "category": "other" }
+  ]
+}
