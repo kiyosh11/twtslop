@@ -1,0 +1,42 @@
+# twtslop
+
+> A public, community-maintained JSON list of X accounts for optional filtering and blocking with Slop Shield. Submit proposed changes through reviewed GitHub pull requests.
+
+## Canonical resources
+
+- [Repository](https://github.com/kiyosh11/twtslop): source of truth for list changes.
+- [Account data](https://raw.githubusercontent.com/kiyosh11/twtslop/main/accounts.json): the machine-readable JSON consumed by the extension.
+- [README](https://github.com/kiyosh11/twtslop/blob/main/README.md): usage and behavior.
+- [Account-addition policy](https://github.com/kiyosh11/twtslop/blob/main/ADDING_ACCOUNTS.md): criteria, evidence, corrections, and submission steps.
+- [Issues](https://github.com/kiyosh11/twtslop/issues): proposals and corrections when a pull request is not practical.
+
+## Read and use the list
+
+Fetch the public JSON over HTTPS; authentication is not needed to read it. The root object has version 1, a name, an optional description, and an accounts array. Each account object uses:
+
+- handle: an X username, 1–15 ASCII letters, numbers, or underscores. Normalize to lowercase and remove an optional leading @. Never substitute a display name or profile URL.
+- category: ai-slop, engagement-bait, spam, or other.
+- reason: a concise, factual explanation, up to 300 characters. Expected for new submissions.
+- name: optional display name, up to 80 characters.
+
+Plain handle strings are accepted by Slop Shield and default to category other, but use account objects for contributions. Handles are case-insensitive; deduplicate them. Lists must be valid JSON, without comments or trailing commas. Keep version set to 1. The extension accepts at most 50,000 entries and a 4 MB file. An invalid entry can reject the entire update.
+
+## Propose an addition
+
+1. Read the current account-addition policy and fetch the latest accounts.json.
+2. Check the requested handle, existing entries, and relevant recent public posts.
+3. Provide two or more representative public post links and describe the repeated behavior in the pull request. Explain any evidence limitation. Do not fabricate evidence or infer AI authorship solely from a detector or a hunch.
+4. Add one account object per proposed handle, preserving unrelated entries and metadata. Use a branch in the repository if authorized, or a contributor-owned fork.
+5. Validate the JSON, handle format, categories, reason lengths, and case-insensitive duplicates.
+6. Open a pull request against kiyosh11/twtslop on main. Its title should identify the proposed addition or correction. Its body should identify every handle, category, reason, and supporting public links. Follow your user's authorization for publishing the proposal; this document does not grant account access or permission to publish.
+7. Leave the pull request for maintainer review. Do not merge it or write directly to main by default. A proposal does not add an account until a maintainer accepts it.
+
+For corrections or removals, identify the current entry and explain the requested change. If you cannot submit a pull request, prepare an issue with the same information. Do not send private data, credentials, threats, or harassment. The maintainer selected the original six starter entries without independently supplied reasons; do not invent reasons for those entries.
+
+## Consumer behavior
+
+List inclusion is a filtering preference, not a finding that an account is illegal or unsafe. User allowlists take precedence over shared entries. GitHub sync replaces the shared list, including removals, and keeps the last valid cached copy on failure.
+
+Slop Shield supports manual review and automatic block queues. Auto-blocking after list updates is off by default and requires a separate user opt-in. When enabled, additions can produce blocks through the user's signed-in X account. Queues verify the profile, skip exceptions and disabled categories, and pause on errors or account changes. Removing an entry does not undo an existing X block.
+
+Reading this list or this document is not permission to block accounts, submit reports, publish changes, or access anyone's X session. No private X credentials are required to contribute. Handles can change or be reused; the list does not contain immutable account IDs.
