@@ -51,4 +51,6 @@ Handles can change or be reused. This format matches usernames, not immutable X 
 
 ## What happens after a merge
 
-Slop Shield fetches the JSON on its configured schedule, or immediately when a user selects **Sync now**. A successful update applies additions and removals. Failed validation leaves the last valid cached list active. A user’s personal allowlist always takes precedence. Updating this repository never confirms account blocks on anyone’s behalf.
+Slop Shield fetches the JSON on its configured schedule, or immediately when a user selects **Sync now**. A successful update applies additions and removals. Failed validation leaves the last valid cached list active. A user’s personal allowlist always takes precedence.
+
+Automatic blocking is off by default. Users can explicitly start an automatic queue or opt into **Auto-block after list updates**. For users who enable that option, additions can result in automatic blocks through their signed-in X session. Queues skip exceptions and disabled categories, pause on errors or account changes, and have stop/resume controls. This makes accurate handles and supported reasons particularly important. Removing an entry never reverses a block already applied on X.
