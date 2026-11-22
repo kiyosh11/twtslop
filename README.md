@@ -18,7 +18,11 @@ Slop Shield already uses this source by default. Choose whether to collapse or h
 
 ## Countries, activity, and recorded blocks
 
-**Countries & activity** lets you choose countries, see detected locations and hidden/collapsed post counts, and choose a block prompt, automatic blocking, or profile links for manual blocking. It reads X’s **About this account → Account based in**, opened from a profile’s **Joined** date. Unknown, region-only, stale (over seven days), and possibly inaccurate observations are not country matches. Bio locations, flags, language, and App Store countries are not used. Optional background checks are off by default and use public X profile controls. English labels are supported.
+**Countries & activity** lets you choose countries or regions, see detected locations and hidden/collapsed post counts, and choose a block prompt, automatic blocking, or profile links for manual blocking. It reads X’s **About this account → Account based in**, opened from a profile’s **Joined** date. Bio locations, flags, language, and App Store countries are not used. Optional background checks are off by default and use public X profile controls. English labels are supported.
+
+Region rules include **South Asia**, **Africa**, **Europe**, **Oceania**, **Middle East**, and other geographic groups. A region rule matches its exact X label, contained region labels, and the countries listed in its hover tooltip. For example, South Asia matches an account displaying either South Asia or India. Selecting India alone never guesses which country a broad South Asia observation belongs to. Group memberships are explicit application rules, not a claim that X publishes an official geographic taxonomy.
+
+Matching location posts **hide completely by default**, independently of your list-post collapse preference. Enable the location-filter checkbox, select countries/regions, then choose **Apply country & region rules**. Unknown and expired observations (over seven days) stay visible; accuracy-flagged values are skipped unless you enable the option to include them. Each detected account shows its match or skip reason. **Check open X tabs** reports loaded/matching/hidden posts and identifies tabs that need refreshing after an extension reload.
 
 **Block history** provides search, filtering by your X account, and JSON export for blocks verified by the extension. It is a local record, not an import of every server-side X block; a block may have changed since verification.
 
