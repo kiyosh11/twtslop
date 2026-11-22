@@ -40,3 +40,9 @@ List inclusion is a filtering preference, not a finding that an account is illeg
 Slop Shield supports manual review and automatic block queues. Auto-blocking after list updates is off by default and requires a separate user opt-in. When enabled, additions can produce blocks through the user's signed-in X account. Queues verify the profile, skip exceptions and disabled categories, and pause on errors or account changes. Removing an entry does not undo an existing X block.
 
 Reading this list or this document is not permission to block accounts, submit reports, publish changes, or access anyone's X session. No private X credentials are required to contribute. Handles can change or be reused; the list does not contain immutable account IDs.
+
+## Extension-assisted contributions and country rules
+
+Slop Shield's Block history view can prepare a proposal from selected, locally recorded blocks. It fetches the latest public JSON, asks for a posting-behavior reason and public examples for each new account, and provides updated JSON and a PR description. The user completes branch or fork creation and the final PR in GitHub's editor. No GitHub token is stored by the extension. Do not claim this preparation dialog has submitted a PR.
+
+Country filtering is a separate personal preference. It reads X's explicit Account based in field in About this account, opened through the profile's Joined date. It does not infer a country from bios, names, flags, language, App Store country, or a broader region. Unknown, stale, and possibly inaccurate observations are not matches. The dashboard can prompt for blocking, use profile links, or auto-block after explicit opt-in. Personal country matches, browsing observations, and the user's X account handles are not automatically published to this repository. A country preference alone is not a posting-behavior reason for a shared-list contribution.
