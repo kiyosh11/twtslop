@@ -30,6 +30,8 @@ Keep reasons factual and specific. Do not submit accounts solely for their ident
 
 If you cannot edit JSON, open an issue with the same information. For multiple accounts, provide a separate reason and examples for each. Avoid unexplained bulk submissions.
 
+Slop Shield also offers **Block history → Prepare PR from selected**. This prepares updated JSON and a PR description from the latest list after you supply reasons and public examples. Copy them into GitHub's editor, choose a new branch or fork, and submit a pull request there. Preparation does not publish or merge anything. Country filters are personal preferences; country alone is not evidence of the posting behavior described by this list.
+
 ## Entry format
 
 | Field | Requirement |
